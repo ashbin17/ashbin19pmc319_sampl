@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="https://gdurl.com/E4ca">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>User Details</title>
+	<style type="text/css">
+		table {
+  			border-collapse: separate;
+  			border-spacing: 0 15px;
+		}
+
+		tr {
+  			width: 150px;
+  			padding: 10px;
+		}	
+			.h{
+      background-color: blue;
+      text-align: center;
+      color: white;
+      height: 15%;
+      width: 100%;
+      padding: 10px;
+    }
+     form{
+            margin: auto;
+            width: 600px;
+            max-width: 100%;
+            background-color: white;
+            padding: 20px;
+        }
+         .bt{
+          background-color: blue; 
+          padding: 10px;
+          color: white;
+
+        }
+        .bt1{
+          background-color: red; 
+          padding: 10px;
+          color: white;
+        }
+        .p1{
+            color: red;
+        }
+	</style>
+<script type="text/javascript">
+	function validate(){
+		var error = 0;
+		var a = document.getElementById("name").value;
+            document.getElementById('name_error').innerHTML = '';
+            if (a == null || a == "" ) {
+            error++;
+            document.getElementById('name_error').innerHTML ='Must be filled out';
+            }
+            var b = document.getElementById('email').value;
+            document.getElementById('email_error').innerHTML = '';
+            if (b == null || b == "" ) {
+            error++;
+            document.getElementById('email_error').innerHTML ='Must be filled out';
+            }
+            var c = document.getElementById('mobile').value;
+            document.getElementById('mobile_error').innerHTML = '';
+            if (c == null || c == "" ) {
+            error++;
+            document.getElementById('mobile_error').innerHTML ='Must be filled out';
+            }
+            var d = document.getElementById('dob').value;
+            document.getElementById('dob_error').innerHTML = '';
+            if (d == null || d == "" ) {
+            error++;
+             document.getElementById('dob_error').innerHTML ='Must be filled out';
+        	}
+        	var e = document.getElementById('10th').value;
+            document.getElementById('10th_error').innerHTML = '';
+            if (e == null || e == "" ) {
+            error++;
+            document.getElementById('10th_error').innerHTML = 'Must be filled out';
+        	}
+        	var f = document.getElementById('12th').value;
+            document.getElementById('12th_error').innerHTML = '';
+            if (f == null || f == "" ) {
+            error++;
+            document.getElementById('12th_error').innerHTML = 'Must be filled out';
+        	}
+        	var g = document.getElementById('degree').value;
+            document.getElementById('degree_error').innerHTML = '';
+            if (g == null || g == "" ) {
+            error++;
+            document.getElementById('degree_error').innerHTML = 'Must be filled out';
+        	}
+             if(error>0) {
+                return false;
+            }
+            else{
+            	alert("Successfully Submitted!!")
+                return true;
+            }
+	}
+</script>
+</head>
+<body>
+	 <header>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Sample One</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="personal_info_css.html">Personal Info</a></li>
+      <li class="active"><a href="user_details.html">Add User</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+<div class="h">
+		<h1>ADD USER DETAILS</h1>
+	</div>
+	
+	<div class="jumbotron" align="center">
+		<form action="index.html" onsubmit="return validate();">
+		<table>
+			<tr>
+				<th><h2>Personal Details</h2></th>
+			</tr>
+			<tr>
+				<th>Name</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="text" class="form-control" id="name" placeholder="Ashbin" maxlength="20">
+					<span class="error"><p id="name_error" class="p1"></p></span></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="mail" class="form-control" id="email" placeholder="abc@mail">
+					<span class="error"><p id="email_error" class="p1"></p></span></td>
+			</tr>
+			<tr>
+				<th>Mobile</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="text" class="form-control" id="mobile" pattern="[0-9]{10}" placeholder="9876543210" >
+					<span class="error"><p id="mobile_error" class="p1"></p></span></td>
+			</tr>
+			<tr>
+				<th>DOB</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="date" class="form-control" max="2010-12-31" id="dob" >
+					<span class="error"><p id="dob_error" class="p1"></p></span></td>
+			</tr>
+			<tr>
+				<th>Gender</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="radio" name="gender" required>Male
+				<input type="radio"  name="gender">Female</td>
+			</tr>
+			<tr>
+				<th><h2>Education Details</h2>
+					<h3>(In Percentage)</h3></th>
+			</tr>
+			<tr>
+				<th>10th</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="number" class="form-control" id="10th" min="1" max="100" placeholder="70">
+					<span class="error"><p id="10th_error" class="p1"></p></span></td>
+			</tr>
+			<tr>
+				<th>12th</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="number" class="form-control" id="12th" min="1" max="100" placeholder="70">
+					<span class="error"><p id="12th_error" class="p1"></p></span></td>
+			</tr>
+			<tr>				
+				<th>Degree</th>
+				<td>&emsp;&emsp;</td>
+				<td><input type="number" class="form-control" id="degree" min="1" max="100" placeholder="70">
+					<span class="error"><p id="degree_error" class="p1"></p></span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>&emsp;&emsp;<input type="reset" class="btn bt1">&emsp;<input type="submit" value="Add User" class="btn bt" name=""></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+<footer>
+	<div align="center">
+	<p>Created by: Ashbin mathew</p>
+	<p>ashbin.19pmc319@mcka.in</p>
+	<hr>
+	</div>
+</footer>
+</body>
+</html>
